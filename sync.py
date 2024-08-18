@@ -1,7 +1,5 @@
 from sqlalchemy import create_engine
-from Model.init import Base
-from Model.task import Task
-from Model.payment import Payment
+from Models.init import Base
 from DataBase.connection import getConnection
 
 def sync():

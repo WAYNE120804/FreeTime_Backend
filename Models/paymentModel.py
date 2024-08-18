@@ -1,14 +1,14 @@
 from sqlalchemy import Column, Integer, String, Enum
-from Model.init import Base
+from Models.init import Base
 import enum
 
 class AccountType(enum.Enum):
-    AHORRO = "ahorro"
-    CORRIENTE = "corriente"
-    CREDITO = "credito"
+    AHORRO = "Ahorro"
+    CORRIENTE = "Corriente"
+    CREDITO = "Credito"
 
 class Payment(Base):
-    __tablename__ = 'payment'
+    __tablename__ = 'Payment'
 
     idPayment = Column(Integer, primary_key=True, autoincrement=True)
     accountNumber = Column(String(255), nullable=False)

@@ -1,23 +1,24 @@
 from sqlalchemy import Column, String, Integer, Boolean
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from Models.init import Base
 
 class Users(Base):
-    __tablename__ = 'users'
+    __tablename__ = 'Users'
 
     idUser = Column(Integer, primary_key=True, autoincrement=True)
-    fullName = Column(String, nullable=False)
-    identification = Column(String, primary_key=True)
-    email = Column(String, unique=True, nullable=False)
-    phoneNumber = Column(String, nullable=True)
-    country = Column(String, nullable=False)
-    city = Column(String, nullable=False)
-    address = Column(String, nullable=True)
+    fullName = Column(String(255), nullable=False)  # Especificar longitud
+    identification = Column(String(50), unique=True, nullable=False)  # Longitud especificada y único
+    email = Column(String(255), unique=True, nullable=False)  # Especificar longitud y único
+    phoneNumber = Column(String(20), nullable=True)  # Longitud especificada para número de teléfono
+    country = Column(String(100), nullable=False)  # Longitud especificada
+    city = Column(String(100), nullable=False)  # Longitud especificada
+    address = Column(String(255), nullable=True)  # Longitud especificada
     freeTimer = Column(Boolean, default=False)
     fullTimer = Column(Boolean, default=False)
-    password = Column(String, nullable=False)
+    password = Column(String(255), nullable=False)  # Longitud especificada para la contraseña
     balance = Column(Integer, default=0)
 
     def __repr__(self):
-        return (f"<User(idSupport={self.idUser}, fullName='{self.fullName}', email='{self.email}'>")
+        return (f"<User(idUser={self.idUser}, fullName='{self.fullName}', email='{self.email}', "
+                f"phoneNumber='{self.phoneNumber}', country='{self.country}', city='{self.city}', "
+                f"address='{self.address}', freeTimer={self.freeTimer}, fullTimer={self.fullTimer}, "
+                f"balance={self.balance})>")

@@ -1,16 +1,16 @@
 from sqlalchemy import Column, Integer, String, Text
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from Models.init import Base
 
 class Support(Base):
-    __tablename__ = 'support'
+    __tablename__ = 'Support'
 
     idSupport = Column(Integer, primary_key=True, autoincrement=True)
-    nameRequestSupport = Column(String, nullable=False)
-    emailRequestSupport = Column(String, nullable=False)
-    descriptionTopic = Column(Text, nullable=False)
-    topicToReport = Column(String, nullable=False)
+    nameRequestSupport = Column(String(255), nullable=False)  # Longitud especificada
+    emailRequestSupport = Column(String(255), nullable=False) # Longitud especificada
+    descriptionTopic = Column(Text, nullable=False)  # Text no requiere longitud
+    topicToReport = Column(String(255), nullable=False)  # Longitud especificada
 
     def __repr__(self):
-        return (f"<Support(idSupport={self.idSupport}, nameRequestSupport='{self.nameRequestSupport}', emailRequestSupport='{self.emailRequestSupport}'>")
+        return (f"<Support(idSupport={self.idSupport}, nameRequestSupport='{self.nameRequestSupport}', "
+                f"emailRequestSupport='{self.emailRequestSupport}', descriptionTopic='{self.descriptionTopic}', "
+                f"topicToReport='{self.topicToReport}')>")

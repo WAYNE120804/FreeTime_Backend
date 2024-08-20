@@ -1,4 +1,4 @@
-from models.userModel import User
+from Models.userModel import User
 
 
 def deleteAccount():

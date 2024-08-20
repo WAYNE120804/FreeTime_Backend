@@ -6,6 +6,7 @@ Base = declarative_base()
 class Users(Base):
     __tablename__ = 'users'
 
+    idUser = Column(Integer, primary_key=True, autoincrement=True)
     fullName = Column(String, nullable=False)
     identification = Column(String, primary_key=True)
     email = Column(String, unique=True, nullable=False)
@@ -19,4 +20,4 @@ class Users(Base):
     balance = Column(Integer, default=0)
 
     def __repr__(self):
-        return f"<User(fullName='{self.fullName}', email='{self.email}')>"
+        return (f"<User(idSupport={self.idUser}, fullName='{self.fullName}', email='{self.email}'>")

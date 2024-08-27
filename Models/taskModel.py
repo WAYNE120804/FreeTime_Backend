@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime
 from Models.init import Base
 
 class Task(Base):
-    __tablename__ = 'Task'
+    __tablename__ = 'Tasks'
 
     idTask = Column(Integer, primary_key=True, autoincrement=True)
     taskName = Column(String(255), nullable=False)
@@ -14,7 +14,7 @@ class Task(Base):
     direction = Column(String(255), nullable=False)
 
     def __repr__(self):
-        return (f"<Task(idTask={self.idTask}, taskName={self.taskName}, estimedTime={self.estimedTime}, "
+        return (f"<Tasks(idTask={self.idTask}, taskName={self.taskName}, estimedTime={self.estimedTime}, "
                 f"offer={self.offer}, suggestedOffer={self.suggestedOffer}, userBalance={self.userBalance}, "
                 f"date={self.date}, direction={self.direction})>")
 

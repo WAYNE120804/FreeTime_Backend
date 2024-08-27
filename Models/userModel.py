@@ -1,8 +1,8 @@
 from sqlalchemy import Column, String, Integer, Boolean
 from Models.init import Base
 
-class Users(Base):
-    __tablename__ = 'Users'
+class User(Base):
+    __tablename__ = 'User'
 
     idUser = Column(Integer, primary_key=True, autoincrement=True)
     fullName = Column(String(255), nullable=False)  # Especificar longitud

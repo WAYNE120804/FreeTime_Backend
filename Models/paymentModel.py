@@ -8,7 +8,7 @@ class AccountType(enum.Enum):
     CREDITO = "Credito"
 
 class Payment(Base):
-    __tablename__ = 'Payment'
+    __tablename__ = 'Payments'
 
     idPayment = Column(Integer, primary_key=True, autoincrement=True)
     accountNumber = Column(String(255), nullable=False)
@@ -16,5 +16,5 @@ class Payment(Base):
     accountType = Column(Enum(AccountType), nullable=False)
 
     def __repr__(self):
-        return (f"<Payment(idPayment={self.idPayment}, accountNumber={self.accountNumber}, "
+        return (f"<Payments(idPayment={self.idPayment}, accountNumber={self.accountNumber}, "
                 f"accountHolder={self.accountHolder}, accountType={self.accountType})>")

@@ -15,3 +15,8 @@ from .offerModel import Offer
 from .paymentModel import Payment
 from .taskModel import Task
 from .taskTypeModel import TaskType
+from .payCheckModel import PayCheck
+from .accountModel import Account
+from .accountTypeModel import Account_Type
+from .supportModel import Support
+from .bankModel import Bank

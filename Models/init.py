@@ -11,3 +11,7 @@ from .countryModel import Country
 from .disableModel import Disable
 from .freeTimerHealthModel import FreeTimerHealth
 from .stateModel import State
+from .offerModel import Offer
+from .paymentModel import Payment
+from .taskModel import Task
+from .taskTypeModel import TaskType

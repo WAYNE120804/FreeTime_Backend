@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Boolean, BLOB
+from sqlalchemy import Column, String, Integer,ForeignKey
 from Models.init import Base
 
 class City(Base):
@@ -6,7 +6,7 @@ class City(Base):
 
     city_id = Column(Integer, primary_key=True)
     city_name = Column(String(70), nullable=False)  # Longitud especificada
-    state_id = Column(Integer, nullable= False) # llave foranea del departemento
+    state_id = Column(Integer, ForeignKey('State.state_id')) # llave foranea del departemento
 
 
     def __repr__(self):

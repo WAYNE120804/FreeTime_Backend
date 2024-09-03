@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime,BLOB
+from sqlalchemy import Column, String, Integer, DateTime,BLOB, ForeignKey
 from Models.init import Base
 
 class FreeTimerHealth(Base):
@@ -9,7 +9,7 @@ class FreeTimerHealth(Base):
     freeTimer_health_date_update = Column(DateTime, nullable=False) 
     freeTimer_health_date_end = Column(DateTime, nullable=False) 
     freeTimer_health_date_document = Column(BLOB, nullable=False) 
-    user_id = Column(Integer,nullable=False) #llave foranea del id del usuario
+    user_id = Column(Integer, ForeignKey('User.user_id'))#llave foranea del id del usuario
 
 
     def __repr__(self):

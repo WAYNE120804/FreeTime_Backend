@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from Models.init import Base
 
 class Task(Base):
@@ -10,8 +10,8 @@ class Task(Base):
     task_offer_suggested = Column(String(400))
     task_description = Column(String(400))
     address = Column(String(50))
-    price_offer_id = Column(Integer)
-    task_type_id = Column(Integer)
+    price_offer_id = Column(Integer,ForeignKey('Offer.offer_id'))
+    task_type_id = Column(Integer, ForeignKey('TaskType.task_type_id'))
 
     def __repr__(self):
         return (f"<Task(task_id={self.task_id}, "

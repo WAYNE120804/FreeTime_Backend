@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Boolean, BLOB
+from sqlalchemy import Column, String, Integer, ForeignKey
 from Models.init import Base
 
 class State(Base):
@@ -6,7 +6,7 @@ class State(Base):
 
     state_id = Column(Integer, primary_key=True)
     state_name = Column(String(70), nullable=False)  # Longitud especificada
-    country_id = Column(Integer,nullable=False) #llave foranea de pais
+    country_id = Column(Integer,ForeignKey('Country.country_id')) #llave foranea de pais
 
 
     def __repr__(self):

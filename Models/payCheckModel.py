@@ -8,7 +8,7 @@ class PayCheck(Base):
     pay_check_date = Column(DateTime)
     pay_check_value = Column(DECIMAL)
     pay_check_references = Column(String(255)) 
-    account_id = Column(Integer,ForeignKey('Account.accont_id'))
+    account_id = Column(Integer,ForeignKey('Account.account_id'))
 
     def __repr__(self):
         return (f"<PayCheck(pay_check_id={self.pay_check_id}, "

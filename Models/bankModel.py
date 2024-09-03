@@ -4,9 +4,9 @@ from Models.init import Base
 class Bank(Base):
     __tablename__ = 'Bank'
 
-    Bank_id = Column(Integer, primary_key=True)
-    Bank_name = Column(String(50))  
+    bank_id = Column(Integer, primary_key=True)
+    bank_name = Column(String(50))  
 
     def __repr__(self):
-        return (f"<Bank(Bank_id={self.Bank_id}, "
-          f"Bank_name='{self.Bank_name}')>")
+        return (f"<Bank(bank_id={self.bank_id}, "
+          f"bank_name='{self.bank_name}')>")

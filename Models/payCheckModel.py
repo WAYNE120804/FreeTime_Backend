@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, DECIMAL,ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, DECIMAL,ForeignKey,VARCHAR
 from Models.init import Base
 
 class PayCheck(Base):
@@ -7,12 +7,10 @@ class PayCheck(Base):
     pay_check_id = Column(Integer, primary_key=True)
     pay_check_date = Column(DateTime)
     pay_check_value = Column(DECIMAL)
-    pay_check_references = Column(String(255)) 
-    account_id = Column(Integer,ForeignKey('Account.account_id'))
+    offer_id = Column(Integer,ForeignKey('Offer.offer_id'))
 
     def __repr__(self):
         return (f"<PayCheck(pay_check_id={self.pay_check_id}, "
                 f"pay_check_date={self.pay_check_date}, "
                 f"pay_check_value={self.pay_check_value}, "
-                f"pay_check_references='{self.pay_check_references}', "
-                f"account_id={self.account_id})>")
+                f"offer_id={self.offer_id})>")

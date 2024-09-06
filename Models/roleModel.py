@@ -8,4 +8,4 @@ class Role(Base):
     role_name = Column(String(50), nullable=False)  # Nombre del rol con longitud especificada
 
     def __repr__(self):
-        return f"<Role(role_id={self.role_id}, role_name='{self.role_name}')>"
+        return (f"<Role(role_id={self.role_id}, role_name='{self.role_name}')>")

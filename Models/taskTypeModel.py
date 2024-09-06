@@ -8,5 +8,5 @@ class TaskType(Base):
     task_type_name = Column(String(400))
 
     def __repr__(self):
-        return (f"<Task(task_type_id={self.task_type_id}, "
+        return (f"<TaskType(task_type_id={self.task_type_id}, "
                 f"task_type_name={self.task_type_name})>")

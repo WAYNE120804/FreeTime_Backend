@@ -1,1 +1,1 @@
-from Models.usersOffersModel import UsersOffers
+from Models.Postulates import UsersOffers

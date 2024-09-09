@@ -1,22 +1,16 @@
-from sqlalchemy import Column, Integer, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, DateTime, ForeignKey, DECIMAL
 from Models.init import Base
 
 class Payment(Base):
     __tablename__ = 'Payment'
 
-    offer_id = Column(Integer, primary_key=True)
-    offer_date = Column(DateTime)
-    offer_suggested_price = Column(Integer)
-    user_id_freetime = Column(Integer, ForeignKey('User.user_id'))
-    user_id_fulltime = Column(Integer, ForeignKey('User.user_id'))
-    offer_freetimer_calification = Column(Integer)
-    offer_fulltimer_calification = Column(Integer)
+    payment_id = Column(Integer, primary_key=True)
+    payment_date = Column(DateTime)
+    payment_value = Column(DECIMAL)
+    offer_id = Column(Integer,ForeignKey('Offer.offer_id'))
 
     def __repr__(self):
-        return (f"<Offer(offer_id={self.offer_id}, "
-                f"offer_date={self.offer_date}, "
-                f"offer_suggested_price={self.offer_suggested_price}, "
-                f"user_id_freetime={self.user_id_freetime}, "
-                f"user_id1_fulltime={self.user_id_fulltime}, "
-                f"offer_freetimer_calification={self.offer_freetimer_calification}, "
-                f"offer_fulltimer_calification={self.offer_fulltimer_calification})>")
+        return (f"<Offer(payment_id={self.payment_id}, "
+                f"payment_date={self.payment_date}, "
+                f"payment_value={self.payment_value}, "
+                f"offer_id={self.offer_id})>")

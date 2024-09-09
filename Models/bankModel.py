@@ -1,11 +1,11 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, VARCHAR
 from Models.init import Base
 
 class Bank(Base):
     __tablename__ = 'Bank'
 
     bank_id = Column(Integer, primary_key=True)
-    bank_name = Column(String(50))  
+    bank_name = Column(VARCHAR(40))  
 
     def __repr__(self):
         return (f"<Bank(bank_id={self.bank_id}, "

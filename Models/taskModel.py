@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey,DECIMAL
+from sqlalchemy import Column, Integer, Text, DateTime, ForeignKey,DECIMAL
 from Models.init import Base
 
 class Task(Base):
     __tablename__ = 'Task'
 
     task_id = Column(Integer, primary_key=True)
-    task_offer_suggested = Column(String(400))
-    task_description = Column(String(400))
+    task_offer_suggested = Column(DECIMAL)
+    task_description = Column(Text(400))
     task_stimed_time_hours = Column(DECIMAL, nullable= False)
     task_type_id = Column(Integer, ForeignKey('TaskType.task_type_id'))
 

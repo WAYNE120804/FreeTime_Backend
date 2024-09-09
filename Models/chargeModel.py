@@ -12,5 +12,5 @@ class Charge(Base):
 
     def __repr__(self):
         return (f"<Charge(charge_id={self.charge_id}, charge_date='{self.charge_date}', "
-                f"charge_value={self.charge_value}, user_account={self.user_account}, "
-                f"charge_reference='{self.charge_reference}', user_id={self.user_id}, account_id={self.account_id})>")
+                f"charge_value={self.charge_value}, "
+                f"charge_reference='{self.charge_reference}', account_id={self.account_id})>")

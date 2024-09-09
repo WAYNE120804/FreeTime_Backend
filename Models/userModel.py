@@ -1,16 +1,16 @@
-from sqlalchemy import Column, String, Integer, Boolean, BLOB, ForeignKey, VARCHAR
+from sqlalchemy import Column, VARCHAR, Integer, Boolean, BLOB, ForeignKey, VARCHAR
 from Models.init import Base
 
 class User(Base):
     __tablename__ = 'User'
 
     user_id = Column(Integer, primary_key=True, autoincrement=True)
-    user_full_name = Column(String(70), nullable=False)  # Longitud especificada
-    user_address = Column(String(50), nullable=True)  # Longitud especificada
-    user_email = Column(String(50), unique=True, nullable=False)  # Longitud especificada y único
-    user_nickname = Column(String(20), nullable=True)  # Longitud especificada
-    user_document = Column(String(10), unique=True, nullable=False)  # Longitud especificada y único
-    user_password = Column(String(256), nullable=False)  # Longitud especificada para la contraseña
+    user_full_name = Column(VARCHAR(70), nullable=False)  # Longitud especificada
+    user_address = Column(VARCHAR(50), nullable=True)  # Longitud especificada
+    user_email = Column(VARCHAR(50), unique=True, nullable=False)  # Longitud especificada y único
+    user_nickname = Column(VARCHAR(20), nullable=True)  # Longitud especificada
+    user_document = Column(VARCHAR(10), unique=True, nullable=False)  # Longitud especificada y único
+    user_password = Column(VARCHAR(256), nullable=False)  # Longitud especificada para la contraseña
     user_photo = Column(VARCHAR(256), nullable=True)  # BLOB para almacenar fotos
     user_enable = Column(Boolean, default=False)  # TINYINT puede ser mapeado como Boolean en SQLAlchemy
     user_points = Column(Integer, default=0)  # Puntos del usuario

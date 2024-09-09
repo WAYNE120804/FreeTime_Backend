@@ -1,11 +1,11 @@
-from sqlalchemy import Column, String, Integer,DateTime, ForeignKey
+from sqlalchemy import Column, Text, Integer,DateTime, ForeignKey
 from Models.init import Base
 
 class Disable(Base):
     __tablename__ = 'Disable'
 
     disable_id = Column(Integer, primary_key=True)
-    disable_user_description = Column(String(1000), nullable=False)  # Longitud especificada
+    disable_user_description = Column(Text(1000), nullable=False)  # Longitud especificada
     disable_user_date= Column(DateTime, nullable=False) 
     user_id = Column(Integer, ForeignKey('User.user_id')) #llave foranea del id del usuario
 

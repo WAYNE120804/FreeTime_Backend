@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String,VARCHAR
+from sqlalchemy import Column, Integer, VARCHAR
 from Models.init import Base
 
 class SupportState(Base):

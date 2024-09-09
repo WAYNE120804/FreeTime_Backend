@@ -6,7 +6,7 @@ class Offer(Base):
 
     offer_id = Column(Integer, primary_key=True)
     offer_date = Column(DateTime)
-    offer_inicial_price = Column(Integer)
+    offer_inicial_price = Column(DECIMAL)
     address = Column(VARCHAR(150))
     offer_freetimer_calification = Column(Integer)
     offer_fulltimer_calification = Column(Integer)

@@ -1,11 +1,11 @@
-from sqlalchemy import Column, Integer,ForeignKey
+from sqlalchemy import Column, Integer,ForeignKey, VARCHAR
 from Models.init import Base
 
 class Account(Base):
     __tablename__ = 'Account'
 
     account_id = Column(Integer, primary_key=True)
-    account_number = Column(Integer, unique= True)
+    account_number = Column(VARCHAR(30), unique= True)
     bank_id = Column(Integer, ForeignKey('Bank.bank_id'))
     account_Type_id = Column(Integer, ForeignKey('AccountType.account_Type_id'))
     user_id = Column(Integer, ForeignKey('User.user_id'))  # ID del rol (llave foránea)

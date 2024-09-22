@@ -5,8 +5,8 @@ class Postulates(Base):
     __tablename__ = 'Postulates'
 
     postulate_id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id_freetimer = Column(Integer, ForeignKey('User.user_id'))  # ID del rol (llave foránea)
-    offer_id = Column(Integer,ForeignKey('Offer.offer_id'))  # ID de la oferta (llave foránea)
+    user_id_freetimer = Column(Integer, ForeignKey('User.user_id'),nullable=False)  # ID del rol (llave foránea)
+    offer_id = Column(Integer,ForeignKey('Offer.offer_id'),nullable=False)  # ID de la oferta (llave foránea)
     postulate_price = Column(DECIMAL, nullable= True)
     postulate_date = Column(DateTime, nullable= True)
 

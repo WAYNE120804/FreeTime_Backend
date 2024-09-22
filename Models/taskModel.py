@@ -8,7 +8,7 @@ class Task(Base):
     task_offer_suggested = Column(DECIMAL)
     task_description = Column(Text(400))
     task_stimed_time_hours = Column(DECIMAL, nullable= False)
-    task_type_id = Column(Integer, ForeignKey('TaskType.task_type_id'))
+    task_type_id = Column(Integer, ForeignKey('TaskType.task_type_id'),nullable=False)
 
     def __repr__(self):
         return (f"<Task(task_id={self.task_id}, "

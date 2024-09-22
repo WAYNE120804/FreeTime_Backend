@@ -9,7 +9,7 @@ class FreeTimerHealth(Base):
     freeTimer_health_date_update = Column(DateTime, nullable=False) 
     freeTimer_health_date_end = Column(DateTime, nullable=False) 
     freeTimer_health_document = Column(VARCHAR(256), nullable=False) 
-    user_id = Column(Integer, ForeignKey('User.user_id'))#llave foranea del id del usuario
+    user_id = Column(Integer, ForeignKey('User.user_id'),nullable=False)#llave foranea del id del usuario
 
 
     def __repr__(self):

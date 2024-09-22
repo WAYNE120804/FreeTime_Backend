@@ -6,7 +6,7 @@ class City(Base):
 
     city_id = Column(Integer, primary_key=True)
     city_name = Column(VARCHAR(70), nullable=False)  # Longitud especificada
-    state_id = Column(Integer, ForeignKey('State.state_id')) # llave foranea del departemento
+    state_id = Column(Integer, ForeignKey('State.state_id'), nullable=False) # llave foranea del departemento
 
 
     def __repr__(self):

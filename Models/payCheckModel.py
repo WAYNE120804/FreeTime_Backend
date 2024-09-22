@@ -5,10 +5,10 @@ class PayCheck(Base):
     __tablename__ = 'PayCheck'
 
     pay_check_id = Column(Integer, primary_key=True)
-    pay_check_date = Column(DateTime)
-    pay_check_value = Column(DECIMAL)
-    pay_check_references = Column(VARCHAR(40))
-    account_id = Column(Integer,ForeignKey('Account.account_id'))
+    pay_check_date = Column(DateTime,nullable=False)
+    pay_check_value = Column(DECIMAL,nullable=False)
+    pay_check_references = Column(VARCHAR(40),nullable=False)
+    account_id = Column(Integer,ForeignKey('Account.account_id'),nullable=False)
 
     def __repr__(self):
         return (f"<PayCheck(pay_check_id={self.pay_check_id}, "

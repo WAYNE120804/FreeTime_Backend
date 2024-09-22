@@ -8,7 +8,7 @@ class Support(Base):
     support_date = Column(DateTime)
     support_description = Column(Text(2000))
     user_id = Column(Integer,ForeignKey('User.user_id'))
-    support_state_id = Column(Integer,ForeignKey('SupportState.support_state_id'))
+    support_state_id = Column(Integer,ForeignKey('SupportState.support_state_id'),nullable=False)
 
     def __repr__(self):
         return (f"<Support(support_id={self.support_id}, " 

@@ -6,7 +6,7 @@ class State(Base):
 
     state_id = Column(Integer, primary_key=True)
     state_name = Column(VARCHAR(70), nullable=False)  # Longitud especificada
-    country_id = Column(Integer,ForeignKey('Country.country_id')) #llave foranea de pais
+    country_id = Column(Integer,ForeignKey('Country.country_id'),nullable=False) #llave foranea de pais
 
 
     def __repr__(self):

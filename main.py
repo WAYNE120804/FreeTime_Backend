@@ -1,12 +1,14 @@
-from flask import Flask
-from Routers.cityRouter import city_router
 import sync
+from multiprocessing import Process
+from server import app  
 
-app = Flask(__name__)
+def run_server():
+    app.run(debug=True, use_reloader=False)  
 
-# Registrar el blueprint de city
-app.register_blueprint(city_router)
- 
 if __name__ == "__main__":
-  sync.sync()
-  app.run(debug=True)
+    server_process = Process(target=run_server)
+    server_process.start()  
+
+    sync.sync()
+
+    server_process.join()
